@@ -1,0 +1,87 @@
+{
+  "name": "@revivejs/color",
+  "version": "0.1.0",
+  "description": "A tiny, framework-agnostic color picker foundation for modern web applications.",
+  "license": "MIT",
+  "author": "Alexandro Paixao Marques",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexandroit/color.git"
+  },
+  "bugs": {
+    "url": "https://github.com/alexandroit/color/issues"
+  },
+  "homepage": "https://alexandroit.github.io/color/",
+  "type": "module",
+  "sideEffects": false,
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "build:docs": "node scripts/build-docs.mjs",
+    "build:all": "npm run build && npm run build:docs",
+    "clean": "rm -rf dist",
+    "typecheck": "tsc --noEmit",
+    "test": "npm run build && node --test tests/*.test.mjs",
+    "check": "npm run typecheck && npm test"
+  },
+  "keywords": [
+    "revivejs",
+    "color",
+    "color-picker",
+    "colorpicker",
+    "color picker",
+    "vanilla-color-picker",
+    "typescript-color-picker",
+    "vanilla-js",
+    "typescript",
+    "framework-agnostic",
+    "headless-ready",
+    "color-engine",
+    "color-conversion",
+    "color-parser",
+    "hsv",
+    "hsva",
+    "hsl",
+    "hsla",
+    "rgb",
+    "rgba",
+    "hex",
+    "alpha-slider",
+    "hue-slider",
+    "saturation-value",
+    "saturation value picker",
+    "pointer-events",
+    "accessible",
+    "a11y",
+    "mobile-friendly",
+    "tiny-library",
+    "zero-runtime-dependencies",
+    "themeable",
+    "css-variables",
+    "design-tools",
+    "ui-foundation",
+    "design-system",
+    "dom",
+    "future-wrappers"
+  ],
+  "devDependencies": {
+    "@types/node": "^22.15.3",
+    "esbuild": "^0.25.11",
+    "tsup": "^8.5.0",
+    "typescript": "^5.9.3"
+  }
+}

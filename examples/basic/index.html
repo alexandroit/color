@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>@revivejs/color basic example</title>
+    <style>
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        background: #eef2ff;
+        font: 14px/1.5 ui-sans-serif, system-ui, sans-serif;
+        color: #0f172a;
+        transition: background 180ms ease;
+      }
+
+      .demo {
+        display: grid;
+        gap: 16px;
+        width: min(92vw, 460px);
+      }
+
+      .meta {
+        display: grid;
+        gap: 10px;
+        padding: 16px;
+        border-radius: 16px;
+        background: rgba(255, 255, 255, 0.92);
+        box-shadow: 0 10px 28px rgba(15, 23, 42, 0.08);
+        backdrop-filter: blur(10px);
+      }
+
+      .meta h2 {
+        margin: 0;
+        font-size: 13px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: #475569;
+      }
+
+      .meta__row {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .meta__stack {
+        display: grid;
+        gap: 4px;
+      }
+
+      .meta__value {
+        font-weight: 700;
+        font-size: 16px;
+      }
+
+      .swatch {
+        width: 56px;
+        height: 56px;
+        border-radius: 14px;
+        border: 1px solid rgba(15, 23, 42, 0.08);
+      }
+
+      code {
+        display: block;
+        white-space: pre-wrap;
+        word-break: break-word;
+      }
+
+      pre {
+        margin: 0;
+        padding: 14px;
+        border-radius: 12px;
+        background: #0f172a;
+        color: #e2e8f0;
+        overflow: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="demo">
+      <div id="picker"></div>
+      <div class="meta">
+        <h2>Selected color</h2>
+        <div class="meta__row">
+          <div id="swatch" class="swatch"></div>
+          <div class="meta__stack">
+            <div id="primaryValue" class="meta__value"></div>
+            <div id="secondaryValue"></div>
+          </div>
+        </div>
+        <code id="output"></code>
+      </div>
+      <div class="meta">
+        <h2>Vanilla setup</h2>
+        <pre><code id="source"></code></pre>
+      </div>
+    </div>
+
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
