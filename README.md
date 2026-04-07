@@ -10,7 +10,7 @@
 
 **[Documentation & Playground](https://alexandroit.github.io/color/)** | **[npm](https://www.npmjs.com/package/@revivejs/color)** | **[Issues](https://github.com/alexandroit/color/issues)** | **[Repository](https://github.com/alexandroit/color)**
 
-**Latest version:** `0.1.0`
+**Latest version:** `0.1.1`
 
 ---
 
@@ -133,10 +133,16 @@ Every color change returns a normalized snapshot:
 
 The default UI is intentionally minimal and controlled through CSS variables.
 
+Size is customizable too, so the picker can scale from compact utility usage to roomier settings panels.
+
 ```css
 .my-picker {
   --rv-color-max-width: 360px;
   --rv-color-panel-height: 256px;
+  --rv-color-slider-height: 18px;
+  --rv-color-handle-size: 20px;
+  --rv-color-line-handle-width: 16px;
+  --rv-color-line-handle-height: 26px;
   --rv-color-radius: 18px;
   --rv-color-focus: #0f766e;
   --rv-color-surface: #f8fafc;

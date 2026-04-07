@@ -55,6 +55,15 @@ picker.setColor("rgba(124, 58, 237, 0.7)");
 picker.update({ alpha: false });
 picker.destroy();</code></pre>
       <p>The snapshot always includes normalized <code>hex</code>, <code>hexa</code>, <code>rgb</code>, <code>rgba</code>, <code>hsl</code>, <code>hsla</code>, <code>hsv</code>, and <code>hsva</code> values.</p>
+      <p>Picker size is also customizable through CSS variables, so you can make it more compact or more spacious without changing the runtime API.</p>
+      <pre><code>.my-picker {
+  --rv-color-max-width: 360px;
+  --rv-color-panel-height: 256px;
+  --rv-color-slider-height: 18px;
+  --rv-color-handle-size: 20px;
+  --rv-color-line-handle-width: 16px;
+  --rv-color-line-handle-height: 26px;
+}</code></pre>
     `
   }
 ];

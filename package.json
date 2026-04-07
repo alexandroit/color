@@ -1,6 +1,6 @@
 {
   "name": "@revivejs/color",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A tiny, framework-agnostic color picker foundation for modern web applications.",
   "license": "MIT",
   "author": "Alexandro Paixao Marques",
@@ -31,6 +31,7 @@
   ],
   "scripts": {
     "build": "tsup",
+    "postbuild": "node scripts/prune-package-artifacts.mjs",
     "build:docs": "node scripts/build-docs.mjs",
     "build:all": "npm run build && npm run build:docs",
     "clean": "rm -rf dist",
