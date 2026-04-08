@@ -46,7 +46,7 @@ export const createColorPicker = (inputOptions: ColorPickerOptions): ColorPicker
   const store = createColorStore(inputOptions.color ?? "#7c3aed");
   const root = document.createElement("div");
   root.className = "rv-color";
-  root.setAttribute("data-revivejs-color", "");
+  root.setAttribute("data-stackline-color", "");
 
   if (options.className) {
     root.classList.add(...options.className.split(/\s+/).filter(Boolean));

@@ -40,7 +40,7 @@
     "check": "npm run typecheck && npm test"
   },
   "keywords": [
-    "revivejs",
+    "stackline",
     "color",
     "color-picker",
     "colorpicker",

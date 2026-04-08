@@ -202,7 +202,7 @@ npm test
 
 Minimal browser example:
 
-- [examples/basic/index.html](/storage/data/github/revivejs/color/color/examples/basic/index.html)
+- [examples/basic/index.html](./examples/basic/index.html)
 
 ## License
 
