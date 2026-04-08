@@ -6,7 +6,7 @@ const primaryValue = document.querySelector("#primaryValue");
 const secondaryValue = document.querySelector("#secondaryValue");
 const source = document.querySelector("#source");
 
-const demoSource = `import { createColorPicker } from "@revivejs/color";
+const demoSource = `import { createColorPicker } from "@stackline/color";
 
 const picker = createColorPicker({
   el: "#picker",

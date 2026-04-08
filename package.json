@@ -1,5 +1,5 @@
 {
-  "name": "@revivejs/color",
+  "name": "@stackline/color",
   "version": "0.1.1",
   "description": "A tiny, framework-agnostic color picker foundation for modern web applications.",
   "license": "MIT",

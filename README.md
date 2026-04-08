@@ -1,14 +1,14 @@
-# @revivejs/color
+# @stackline/color
 
 > A maintained **framework-agnostic color picker foundation** for modern web applications, with a precise TypeScript color engine, a lightweight vanilla UI layer, and a documentation site centered on a live playground.
 
-[![license](https://img.shields.io/npm/l/@revivejs/color.svg?style=flat-square)](LICENSE)
+[![license](https://img.shields.io/npm/l/@stackline/color.svg?style=flat-square)](LICENSE)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue?style=flat-square&logo=typescript)](https://www.typescriptlang.org)
 [![Build](https://img.shields.io/badge/Build-ESM%20%2B%20CJS-111827?style=flat-square)](https://github.com/alexandroit/color)
 [![Docs](https://img.shields.io/badge/Docs-Live%20Playground%20%26%20Guides-0f172a?style=flat-square)](https://alexandroit.github.io/color/)
 [![Zero Runtime Deps](https://img.shields.io/badge/Runtime-0%20Dependencies-0f766e?style=flat-square)](https://github.com/alexandroit/color)
 
-**[Documentation & Playground](https://alexandroit.github.io/color/)** | **[npm](https://www.npmjs.com/package/@revivejs/color)** | **[Issues](https://github.com/alexandroit/color/issues)** | **[Repository](https://github.com/alexandroit/color)**
+**[Documentation & Playground](https://alexandroit.github.io/color/)** | **[npm](https://www.npmjs.com/package/@stackline/color)** | **[Issues](https://github.com/alexandroit/color/issues)** | **[Repository](https://github.com/alexandroit/color)**
 
 **Latest version:** `0.1.1`
 
@@ -23,7 +23,7 @@ Most color picker packages solve the visible UI, but not always the long-term fo
 - accessibility, keyboard support, and alpha handling are not always polished
 - future wrappers often end up re-implementing the engine instead of sharing one core
 
-`@revivejs/color` is built as a clean TypeScript-first foundation package. The core stays framework-agnostic, the vanilla DOM layer stays light, and future React, Vue, and Angular wrappers can reuse the same engine instead of replacing it.
+`@stackline/color` is built as a clean TypeScript-first foundation package. The core stays framework-agnostic, the vanilla DOM layer stays light, and future React, Vue, and Angular wrappers can reuse the same engine instead of replacing it.
 
 ## Features
 
@@ -59,13 +59,13 @@ Most color picker packages solve the visible UI, but not always the long-term fo
 ## Installation
 
 ```bash
-npm install @revivejs/color
+npm install @stackline/color
 ```
 
 ## Quick Start
 
 ```ts
-import { createColorPicker } from "@revivejs/color";
+import { createColorPicker } from "@stackline/color";
 
 const picker = createColorPicker({
   el: "#picker",
@@ -88,7 +88,7 @@ import {
   createColorSnapshot,
   formatColor,
   parseColor
-} from "@revivejs/color";
+} from "@stackline/color";
 ```
 
 Core runtime capabilities:
@@ -161,7 +161,7 @@ createColorPicker({
 Then inject the exported base styles manually:
 
 ```ts
-import { COLOR_PICKER_STYLES } from "@revivejs/color";
+import { COLOR_PICKER_STYLES } from "@stackline/color";
 ```
 
 ## Accessibility and Interaction

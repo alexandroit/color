@@ -13,7 +13,7 @@ export const pages: DocsPage[] = [
     eyebrow: "Foundation package",
     description: "A compact core for color parsing, conversion, state, and a vanilla picker UI.",
     body: `
-      <p><strong>@revivejs/color</strong> is designed as the foundation package for the future ReviveJS color ecosystem. The core logic stays framework-agnostic and reusable, while the current vanilla layer provides a clean DOM implementation for real browser usage.</p>
+      <p><strong>@stackline/color</strong> is designed as the foundation package for the future Stackline color ecosystem. The core logic stays framework-agnostic and reusable, while the current vanilla layer provides a clean DOM implementation for real browser usage.</p>
       <p>The goal is simple: do a few things very well, keep the runtime tiny, and make future wrappers adapt the same engine instead of replacing it.</p>
     `
   },
@@ -23,8 +23,8 @@ export const pages: DocsPage[] = [
     eyebrow: "Get started",
     description: "Install the package and mount a picker in any DOM container.",
     body: `
-      <pre><code>npm install @revivejs/color</code></pre>
-      <pre><code>import { createColorPicker } from "@revivejs/color";
+      <pre><code>npm install @stackline/color</code></pre>
+      <pre><code>import { createColorPicker } from "@stackline/color";
 
 const picker = createColorPicker({
   el: "#picker",

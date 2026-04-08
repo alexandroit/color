@@ -59,7 +59,7 @@ export const mountPlayground = (element: HTMLElement): void => {
   let picker: ReturnType<typeof createColorPicker> | null = null;
 
   const renderSnippet = (): void => {
-    source.textContent = `import { createColorPicker } from "@revivejs/color";
+    source.textContent = `import { createColorPicker } from "@stackline/color";
 
 const picker = createColorPicker({
   el: "#picker",

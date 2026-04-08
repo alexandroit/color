@@ -31,8 +31,8 @@ app.innerHTML = `
   <div class="layout">
     <aside class="sidebar">
       <a class="brand" href="#playground">
-        <span class="eyebrow">ReviveJS</span>
-        <h1>@revivejs/color</h1>
+        <span class="eyebrow">Stackline</span>
+        <h1>@stackline/color</h1>
         <p>A tiny, framework-agnostic color picker foundation built for future wrappers and long-term ecosystem growth.</p>
       </a>
       <nav class="nav">
@@ -44,7 +44,7 @@ app.innerHTML = `
       <section class="hero">
         <span class="eyebrow">Core + vanilla layer</span>
         <h2>Small, precise, and ready for wrappers.</h2>
-        <p>The first version of <strong>@revivejs/color</strong> focuses on a polished HSV-based engine, a modern vanilla picker, strong typing, accessible controls, and a clean path to React, Vue, and Angular wrappers later.</p>
+        <p>The first version of <strong>@stackline/color</strong> focuses on a polished HSV-based engine, a modern vanilla picker, strong typing, accessible controls, and a clean path to React, Vue, and Angular wrappers later.</p>
         <div class="hero__meta">
           <span>Zero runtime dependencies</span>
           <span>HEX, RGB, HSL, HSV</span>
