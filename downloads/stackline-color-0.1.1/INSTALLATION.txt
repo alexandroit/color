@@ -1,0 +1,29 @@
+@stackline/color 0.1.1
+
+Browser bundle download
+=======================
+
+This folder is for browser applications that do not install packages from npm.
+
+Files
+-----
+- color.browser.js
+- LICENSE
+- README.md
+
+Script tag usage
+----------------
+<div id="picker"></div>
+<script src="./color.browser.js"></script>
+<script>
+  const picker = StacklineColor.createColorPicker({
+    el: "#picker",
+    color: "#7c3aed",
+    hue: true,
+    alpha: true
+  });
+</script>
+
+Global name
+-----------
+window.StacklineColor

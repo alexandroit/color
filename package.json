@@ -33,11 +33,12 @@
     "build": "tsup",
     "postbuild": "node scripts/prune-package-artifacts.mjs",
     "build:docs": "node scripts/build-docs.mjs",
-    "build:all": "npm run build && npm run build:docs",
+    "build:download": "node scripts/build-download.mjs",
+    "build:all": "npm run build && npm run build:docs && npm run build:download",
     "clean": "rm -rf dist",
     "typecheck": "tsc --noEmit",
     "test": "npm run build && node --test tests/*.test.mjs",
-    "check": "npm run typecheck && npm test"
+    "check": "npm run typecheck && npm test && npm run build:docs && npm run build:download"
   },
   "keywords": [
     "stackline",

@@ -35,6 +35,28 @@ const picker = createColorPicker({
     `
   },
   {
+    id: "direct-download",
+    title: "Direct Download",
+    eyebrow: "Pure JavaScript",
+    description: "Use the browser bundle from GitHub when you want a plain script tag integration.",
+    body: `
+      <p><a class="button" href="https://github.com/alexandroit/color/tree/main/downloads" target="_blank" rel="noreferrer">Open GitHub download bundle</a></p>
+      <p>The archive includes <code>color.browser.js</code> and exposes <code>window.StacklineColor</code>.</p>
+      <pre><code>&lt;div id="picker"&gt;&lt;/div&gt;
+&lt;script src="./color.browser.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+  const picker = StacklineColor.createColorPicker({
+    el: "#picker",
+    color: "#7c3aed",
+    alpha: true,
+    hue: true
+  });
+
+  console.log(picker.getColor().hex);
+&lt;/script&gt;</code></pre>
+    `
+  },
+  {
     id: "api",
     title: "API",
     eyebrow: "Small surface",
