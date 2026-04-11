@@ -5,10 +5,10 @@
 [![license](https://img.shields.io/npm/l/@stackline/color.svg?style=flat-square)](LICENSE)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue?style=flat-square&logo=typescript)](https://www.typescriptlang.org)
 [![Build](https://img.shields.io/badge/Build-ESM%20%2B%20CJS-111827?style=flat-square)](https://github.com/alexandroit/color)
-[![Docs](https://img.shields.io/badge/Docs-Live%20Playground%20%26%20Guides-0f172a?style=flat-square)](https://alexandroit.github.io/color/)
+[![Docs](https://img.shields.io/badge/Docs-Live%20Playground%20%26%20Guides-0f172a?style=flat-square)](https://alexandro.net/docs/vanilla/color/)
 [![Zero Runtime Deps](https://img.shields.io/badge/Runtime-0%20Dependencies-0f766e?style=flat-square)](https://github.com/alexandroit/color)
 
-**[Documentation & Playground](https://alexandroit.github.io/color/)** | **[npm](https://www.npmjs.com/package/@stackline/color)** | **[GitHub Download](https://github.com/alexandroit/color/tree/main/downloads)** | **[Issues](https://github.com/alexandroit/color/issues)** | **[Repository](https://github.com/alexandroit/color)**
+**[Documentation & Playground](https://alexandro.net/docs/vanilla/color/)** | **[npm](https://www.npmjs.com/package/@stackline/color)** | **[GitHub Download](https://github.com/alexandroit/color/tree/main/downloads)** | **[Issues](https://github.com/alexandroit/color/issues)** | **[Repository](https://github.com/alexandroit/color)**
 
 **Latest version:** `0.1.1`
 
@@ -208,7 +208,7 @@ The docs site includes:
 - real vanilla setup code
 - live snapshot output and theming examples
 
-Docs: `https://alexandroit.github.io/color/`
+Docs: `https://alexandro.net/docs/vanilla/color/`
 
 ## Run Locally
 

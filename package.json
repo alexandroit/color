@@ -11,7 +11,7 @@
   "bugs": {
     "url": "https://github.com/alexandroit/color/issues"
   },
-  "homepage": "https://alexandroit.github.io/color/",
+  "homepage": "https://alexandro.net/docs/vanilla/color/",
   "type": "module",
   "sideEffects": false,
   "main": "./dist/index.cjs",
