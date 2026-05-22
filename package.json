@@ -1,6 +1,6 @@
 {
   "name": "@stackline/color",
-  "version": "0.1.1",
+  "version": "1.0.0",
   "description": "A tiny, framework-agnostic color picker foundation for modern web applications.",
   "license": "MIT",
   "author": "Alexandro Paixao Marques",

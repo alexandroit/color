@@ -4,7 +4,7 @@ This directory contains browser-ready downloads for developers who want to use `
 
 Current version:
 
-- [stackline-color-0.1.1.zip](./stackline-color-0.1.1.zip)
+- [stackline-color-1.0.0.zip](./stackline-color-1.0.0.zip)
 
 Inside the archive:
 
