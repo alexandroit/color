@@ -1,4 +1,4 @@
-@stackline/color 1.0.0
+@stackline/color 1.0.1
 
 Browser bundle download
 =======================

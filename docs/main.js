@@ -1,6 +1,6 @@
 var L=[{id:"overview",title:"Overview",eyebrow:"Foundation package",description:"A compact core for color parsing, conversion, state, and a vanilla picker UI.",body:`
       <p><strong>@stackline/color</strong> is designed as the foundation package for the future Stackline color ecosystem. The core logic stays framework-agnostic and reusable, while the current vanilla layer provides a clean DOM implementation for real browser usage.</p>
-      <p>The 1.0.0 release is the stable baseline for application teams that want a small color engine and picker API they can adopt with confidence.</p>
+      <p>The 1.0.1 release preserves the stable API while refreshing the build chain and its security baseline.</p>
       <p>The goal is simple: do a few things very well, keep the runtime tiny, and make future wrappers adapt the same engine instead of replacing it.</p>
     `},{id:"installation",title:"Installation",eyebrow:"Get started",description:"Install the package and mount a picker in any DOM container.",body:`
       <pre><code>npm install @stackline/color</code></pre>
@@ -126,9 +126,9 @@ const picker = createColorPicker({
     <main class="content">
       <div id="playground"></div>
       <section class="hero">
-        <span class="eyebrow">Stable 1.0.0 release</span>
+        <span class="eyebrow">Stable 1.0.1 release</span>
         <h2>Small, precise, and ready for wrappers.</h2>
-        <p><strong>@stackline/color</strong> now has a stable 1.0.0 baseline for the HSV-based engine, modern vanilla picker, strong typing, accessible controls, and a clean path to React, Vue, and Angular wrappers later.</p>
+        <p><strong>@stackline/color</strong> 1.0.1 preserves the stable HSV-based engine, modern vanilla picker, strong typing, accessible controls, and a clean path to React, Vue, and Angular wrappers.</p>
         <div class="hero__meta">
           <span>Zero runtime dependencies</span>
           <span>HEX, RGB, HSL, HSV</span>

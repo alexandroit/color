@@ -10,7 +10,7 @@
 
 **[Documentation & Playground](https://alexandro.net/docs/vanilla/color/)** | **[npm](https://www.npmjs.com/package/@stackline/color)** | **[GitHub Download](https://github.com/alexandroit/color/tree/main/downloads)** | **[Issues](https://github.com/alexandroit/color/issues)** | **[Repository](https://github.com/alexandroit/color)**
 
-**Latest version:** `1.0.0`
+**Latest version:** `1.0.1`
 
 ---
 
@@ -25,7 +25,7 @@ Most color picker packages solve the visible UI, but not always the long-term fo
 
 `@stackline/color` is built as a clean TypeScript-first foundation package. The core stays framework-agnostic, the vanilla DOM layer stays light, and future React, Vue, and Angular wrappers can reuse the same engine instead of replacing it.
 
-Version `1.0.0` marks the stable baseline for the core color engine, vanilla picker, TypeScript types, browser bundle, and generated documentation.
+Version `1.0.1` keeps that stable API while refreshing the build chain and resolving the known esbuild development-server advisory in the release toolchain.
 
 ## Features
 

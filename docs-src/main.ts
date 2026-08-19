@@ -42,9 +42,9 @@ app.innerHTML = `
     <main class="content">
       <div id="playground"></div>
       <section class="hero">
-        <span class="eyebrow">Stable 1.0.0 release</span>
+        <span class="eyebrow">Stable 1.0.1 release</span>
         <h2>Small, precise, and ready for wrappers.</h2>
-        <p><strong>@stackline/color</strong> now has a stable 1.0.0 baseline for the HSV-based engine, modern vanilla picker, strong typing, accessible controls, and a clean path to React, Vue, and Angular wrappers later.</p>
+        <p><strong>@stackline/color</strong> 1.0.1 preserves the stable HSV-based engine, modern vanilla picker, strong typing, accessible controls, and a clean path to React, Vue, and Angular wrappers.</p>
         <div class="hero__meta">
           <span>Zero runtime dependencies</span>
           <span>HEX, RGB, HSL, HSV</span>

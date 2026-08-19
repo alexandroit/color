@@ -24,5 +24,10 @@ await esbuild.build({
 
 await fs.copyFile(path.join(docsSrcDir, "index.html"), path.join(docsDir, "index.html"));
 await fs.copyFile(path.join(docsSrcDir, "styles", "site.css"), path.join(docsDir, "site.css"));
+await Promise.all(
+  ["llms.txt", "llms-full.txt"].map((fileName) =>
+    fs.copyFile(path.join(docsSrcDir, fileName), path.join(docsDir, fileName))
+  )
+);
 
 console.log("Built docs into docs/.");

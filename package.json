@@ -1,6 +1,6 @@
 {
   "name": "@stackline/color",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A tiny, framework-agnostic color picker foundation for modern web applications.",
   "license": "MIT",
   "author": "Alexandro Paixao Marques",
@@ -19,26 +19,33 @@
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
     }
   },
   "files": [
     "dist",
+    "CHANGELOG.md",
     "README.md",
     "LICENSE"
   ],
   "scripts": {
     "build": "tsup",
-    "postbuild": "node scripts/prune-package-artifacts.mjs",
     "build:docs": "node scripts/build-docs.mjs",
     "build:download": "node scripts/build-download.mjs",
     "build:all": "npm run build && npm run build:docs && npm run build:download",
+    "postbuild": "node scripts/normalize-declarations.mjs",
     "clean": "rm -rf dist",
-    "typecheck": "tsc --noEmit",
+    "typecheck": "node node_modules/typescript/bin/tsc --noEmit",
+    "typecheck:legacy": "node node_modules/typescript-3-9/bin/tsc -p scripts/tsconfig.typescript-3.9.json",
     "test": "npm run build && node --test tests/*.test.mjs",
-    "check": "npm run typecheck && npm test && npm run build:docs && npm run build:download"
+    "check": "npm run typecheck && npm test && npm run typecheck:legacy && npm run build:docs && npm run build:download"
   },
   "keywords": [
     "stackline",
@@ -81,9 +88,15 @@
     "future-wrappers"
   ],
   "devDependencies": {
-    "@types/node": "^22.15.3",
-    "esbuild": "^0.25.11",
+    "@types/node": "^22.20.1",
+    "esbuild": "^0.28.2",
     "tsup": "^8.5.0",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "typescript-3-9": "npm:typescript@3.9.10"
+  },
+  "overrides": {
+    "tsup": {
+      "esbuild": "^0.28.2"
+    }
   }
 }

@@ -14,7 +14,7 @@ export const pages: DocsPage[] = [
     description: "A compact core for color parsing, conversion, state, and a vanilla picker UI.",
     body: `
       <p><strong>@stackline/color</strong> is designed as the foundation package for the future Stackline color ecosystem. The core logic stays framework-agnostic and reusable, while the current vanilla layer provides a clean DOM implementation for real browser usage.</p>
-      <p>The 1.0.0 release is the stable baseline for application teams that want a small color engine and picker API they can adopt with confidence.</p>
+      <p>The 1.0.1 release preserves the stable API while refreshing the build chain and its security baseline.</p>
       <p>The goal is simple: do a few things very well, keep the runtime tiny, and make future wrappers adapt the same engine instead of replacing it.</p>
     `
   },

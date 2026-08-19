@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "lib": ["ES2015", "DOM"],
+    "noEmit": true,
+    "skipLibCheck": true,
+    "types": []
+  },
+  "files": ["../dist/index.d.ts"]
+}
