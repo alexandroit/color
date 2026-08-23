@@ -78,3 +78,11 @@ test("throws on unsupported input", () => {
   assert.throws(() => parseHslString("rgb(0,0,0)"), /Invalid HSL color/);
   assert.throws(() => hexToRgba("#12"), /Invalid HEX color/);
 });
+
+test("rejects large malformed functional colors without regex backtracking", () => {
+  const digits = "9".repeat(100_000);
+
+  assert.throws(() => parseRgbString(`rgb(${digits}\t${digits}\t${digits}, nope)`), /Invalid RGB color/);
+  assert.throws(() => parseHslString(`hsl(${digits}\t${digits}\t${digits}, nope)`), /Invalid HSL color/);
+  assert.throws(() => parseHsvString(`hsv(${digits}\t${digits}\t${digits}, nope)`), /Invalid HSV color/);
+});

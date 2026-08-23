@@ -4,6 +4,8 @@ All notable changes to `@stackline/color` are documented here.
 
 ## [Unreleased]
 
+- Replaced the RGB, HSL, and HSV parsing expressions with a bounded-memory,
+  linear tokenizer and added large malformed-input regression tests.
 - Added a package-specific security policy, confidential reporting path, and
   shipped security guidance.
 

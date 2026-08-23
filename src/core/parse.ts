@@ -4,12 +4,119 @@ import { normalizeHsla, normalizeHsva, normalizeRgba } from "./normalize";
 import { wrapHue } from "./math";
 
 const HEX_PATTERN = /^#?([\da-f]{3}|[\da-f]{4}|[\da-f]{6}|[\da-f]{8})$/i;
-const RGB_PATTERN =
-  /^rgba?\(\s*(-?\d*\.?\d+)(%)?[\s,]+(-?\d*\.?\d+)(%)?[\s,]+(-?\d*\.?\d+)(%)?(?:\s*[,/]\s*(-?\d*\.?\d+)(%)?)?\s*\)$/i;
-const HSL_PATTERN =
-  /^hsla?\(\s*(-?\d*\.?\d+)(deg|rad|grad|turn)?[\s,]+(-?\d*\.?\d+)%?[\s,]+(-?\d*\.?\d+)%?(?:\s*[,/]\s*(-?\d*\.?\d+)(%)?)?\s*\)$/i;
-const HSV_PATTERN =
-  /^hsva?\(\s*(-?\d*\.?\d+)(deg|rad|grad|turn)?[\s,]+(-?\d*\.?\d+)%?[\s,]+(-?\d*\.?\d+)%?(?:\s*[,/]\s*(-?\d*\.?\d+)(%)?)?\s*\)$/i;
+
+type FunctionalColorKind = "rgb" | "angle";
+type FunctionalColorToken = { raw: string; percentage: boolean; unit?: string };
+
+const isDigitCode = (code: number): boolean => code >= 48 && code <= 57;
+const isWhitespace = (character: string): boolean => character !== "" && character.trim() === "";
+
+const readNumberToken = (
+  input: string,
+  start: number,
+  allowPercentage: boolean,
+  allowAngleUnit: boolean
+): { next: number; token: FunctionalColorToken } | null => {
+  let index = start;
+  const numberStart = index;
+
+  if (input.charCodeAt(index) === 45) index += 1;
+
+  let wholeDigits = 0;
+  while (isDigitCode(input.charCodeAt(index))) {
+    wholeDigits += 1;
+    index += 1;
+  }
+
+  if (input.charCodeAt(index) === 46) {
+    index += 1;
+    const fractionStart = index;
+    while (isDigitCode(input.charCodeAt(index))) index += 1;
+    if (index === fractionStart) return null;
+  } else if (wholeDigits === 0) {
+    return null;
+  }
+
+  const raw = input.slice(numberStart, index);
+  let unit: string | undefined;
+
+  if (allowAngleUnit) {
+    const unitStart = index;
+    while (true) {
+      const code = input.charCodeAt(index);
+      if (!((code >= 65 && code <= 90) || (code >= 97 && code <= 122))) break;
+      index += 1;
+    }
+    if (index > unitStart) {
+      unit = input.slice(unitStart, index).toLowerCase();
+      if (!Object.prototype.hasOwnProperty.call(angleUnits, unit)) return null;
+    }
+  }
+
+  const percentage = allowPercentage && input.charCodeAt(index) === 37;
+  if (percentage) index += 1;
+
+  const token: FunctionalColorToken = { raw, percentage };
+  if (unit !== undefined) token.unit = unit;
+
+  return { next: index, token };
+};
+
+const parseFunctionalColor = (
+  value: string,
+  names: readonly string[],
+  kind: FunctionalColorKind
+): FunctionalColorToken[] | null => {
+  const input = value.trim();
+  const openParenthesis = input.indexOf("(");
+
+  if (openParenthesis <= 0 || input.charAt(input.length - 1) !== ")") return null;
+  if (!names.includes(input.slice(0, openParenthesis).toLowerCase())) return null;
+
+  const body = input.slice(openParenthesis + 1, -1);
+  const tokens: FunctionalColorToken[] = [];
+  let index = 0;
+
+  const skipWhitespace = (): void => {
+    while (isWhitespace(body.charAt(index))) index += 1;
+  };
+
+  skipWhitespace();
+  for (let component = 0; component < 3; component += 1) {
+    const parsed = readNumberToken(
+      body,
+      index,
+      kind === "rgb" || component > 0,
+      kind === "angle" && component === 0
+    );
+    if (!parsed) return null;
+
+    tokens.push(parsed.token);
+    index = parsed.next;
+
+    if (component < 2) {
+      let hasSeparator = false;
+      while (isWhitespace(body.charAt(index)) || body.charAt(index) === ",") {
+        hasSeparator = true;
+        index += 1;
+      }
+      if (!hasSeparator) return null;
+    }
+  }
+
+  skipWhitespace();
+  if (body.charAt(index) === "," || body.charAt(index) === "/") {
+    index += 1;
+    skipWhitespace();
+    const alpha = readNumberToken(body, index, true, false);
+    if (!alpha) return null;
+    tokens.push(alpha.token);
+    index = alpha.next;
+  }
+
+  skipWhitespace();
+  return index === body.length ? tokens : null;
+};
 
 const angleUnits: Record<string, number> = {
   deg: 1,
@@ -37,47 +144,47 @@ const isHsvaObject = (value: unknown): value is HsvaColor => {
 };
 
 export const parseRgbString = (value: string): RgbaColor => {
-  const match = RGB_PATTERN.exec(value.trim());
+  const match = parseFunctionalColor(value, ["rgb", "rgba"], "rgb");
 
   if (!match) {
     throw new TypeError(`Invalid RGB color: ${value}`);
   }
 
   return normalizeRgba({
-    r: Number(match[1]) / (match[2] ? 100 / 255 : 1),
-    g: Number(match[3]) / (match[4] ? 100 / 255 : 1),
-    b: Number(match[5]) / (match[6] ? 100 / 255 : 1),
-    a: match[7] === undefined ? 1 : Number(match[7]) / (match[8] ? 100 : 1)
+    r: Number(match[0]!.raw) / (match[0]!.percentage ? 100 / 255 : 1),
+    g: Number(match[1]!.raw) / (match[1]!.percentage ? 100 / 255 : 1),
+    b: Number(match[2]!.raw) / (match[2]!.percentage ? 100 / 255 : 1),
+    a: match[3] === undefined ? 1 : Number(match[3]!.raw) / (match[3]!.percentage ? 100 : 1)
   });
 };
 
 export const parseHslString = (value: string): HslaColor => {
-  const match = HSL_PATTERN.exec(value.trim());
+  const match = parseFunctionalColor(value, ["hsl", "hsla"], "angle");
 
   if (!match) {
     throw new TypeError(`Invalid HSL color: ${value}`);
   }
 
   return normalizeHsla({
-    h: parseHue(match[1]!, match[2] ?? "deg"),
-    s: Number(match[3]),
-    l: Number(match[4]),
-    a: match[5] === undefined ? 1 : Number(match[5]) / (match[6] ? 100 : 1)
+    h: parseHue(match[0]!.raw, match[0]!.unit ?? "deg"),
+    s: Number(match[1]!.raw),
+    l: Number(match[2]!.raw),
+    a: match[3] === undefined ? 1 : Number(match[3]!.raw) / (match[3]!.percentage ? 100 : 1)
   });
 };
 
 export const parseHsvString = (value: string): HsvaColor => {
-  const match = HSV_PATTERN.exec(value.trim());
+  const match = parseFunctionalColor(value, ["hsv", "hsva"], "angle");
 
   if (!match) {
     throw new TypeError(`Invalid HSV color: ${value}`);
   }
 
   return normalizeHsva({
-    h: parseHue(match[1]!, match[2] ?? "deg"),
-    s: Number(match[3]),
-    v: Number(match[4]),
-    a: match[5] === undefined ? 1 : Number(match[5]) / (match[6] ? 100 : 1)
+    h: parseHue(match[0]!.raw, match[0]!.unit ?? "deg"),
+    s: Number(match[1]!.raw),
+    v: Number(match[2]!.raw),
+    a: match[3] === undefined ? 1 : Number(match[3]!.raw) / (match[3]!.percentage ? 100 : 1)
   });
 };
 
