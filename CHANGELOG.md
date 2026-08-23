@@ -2,6 +2,11 @@
 
 All notable changes to `@stackline/color` are documented here.
 
+## [Unreleased]
+
+- Added a package-specific security policy, confidential reporting path, and
+  shipped security guidance.
+
 ## [1.0.1] - 2026-08-19
 
 - Updated the release build to esbuild 0.28.2.
