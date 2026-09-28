@@ -232,7 +232,7 @@ npm test
 
 Minimal browser example:
 
-- [examples/basic/index.html](./examples/basic/index.html)
+- [examples/basic/index.html](https://github.com/alexandroit/color/blob/main/examples/basic/index.html)
 
 ## Security
 
