@@ -2,7 +2,10 @@
 
 All notable changes to `@stackline/color` are documented here.
 
-## [Unreleased]
+## [1.0.2] - 2026-09-28
+
+- Organize the README with package links and the Stackline Reddit community.
+- Refine npm discovery keywords and publish verified artifacts through GitHub Actions.
 
 - Replaced the RGB, HSL, and HSV parsing expressions with a bounded-memory,
   linear tokenizer and added large malformed-input regression tests.
