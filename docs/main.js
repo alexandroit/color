@@ -3,7 +3,7 @@ var L=[{id:"overview",title:"Overview",eyebrow:"Foundation package",description:
       <p>The 1.0.2 release preserves the stable API while refreshing the build chain and its security baseline.</p>
       <p>The goal is simple: do a few things very well, keep the runtime tiny, and make future wrappers adapt the same engine instead of replacing it.</p>
     `},{id:"installation",title:"Installation",eyebrow:"Get started",description:"Install the package and mount a picker in any DOM container.",body:`
-      <pre><code>npm install @stackline/color</code></pre>
+      <pre><code>npm install @stackline/color@1.0.2</code></pre>
       <pre><code>import { createColorPicker } from "@stackline/color";
 
 const picker = createColorPicker({

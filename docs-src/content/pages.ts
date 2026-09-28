@@ -24,7 +24,7 @@ export const pages: DocsPage[] = [
     eyebrow: "Get started",
     description: "Install the package and mount a picker in any DOM container.",
     body: `
-      <pre><code>npm install @stackline/color</code></pre>
+      <pre><code>npm install @stackline/color@1.0.2</code></pre>
       <pre><code>import { createColorPicker } from "@stackline/color";
 
 const picker = createColorPicker({
