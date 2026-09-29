@@ -1,0 +1,34 @@
+{
+  "repository": "alexandroit/color",
+  "packages": [
+    {
+      "name": "@stackline/color",
+      "path": "README.md",
+      "version": "1.0.3",
+      "baselineVersion": "1.0.2",
+      "keywords": [
+        "stackline",
+        "npm-package",
+        "color",
+        "typescript",
+        "color-picker",
+        "color-conversion",
+        "hex",
+        "rgb",
+        "hsl",
+        "hsv",
+        "alpha",
+        "javascript",
+        "browser",
+        "dom",
+        "accessibility",
+        "framework-agnostic"
+      ],
+      "homepage": "https://alexandro.net/docs/vanilla/color/",
+      "baselineTarball": "https://registry.npmjs.org/@stackline/color/-/color-1.0.2.tgz",
+      "baselineIntegrity": "sha512-WV1grpHXEkB2fMK+CV8GRG/5FVIFEEYEDZP1yXqcbE9xgbLSjIynIDi0bvUI5B0b2x0DPUbgmk+21RCe9x6UzA==",
+      "expectedSha512": "98937563060c40096511093fbad8b62e2b6c39ae61827dbf5aac8d683a0e4922570ced4ae5d9b4771f326f496c226080d680c79cfdf59f3ab328139b52d08663",
+      "tag": "docs-stackline-color-v1.0.3"
+    }
+  ]
+}
