@@ -4,7 +4,7 @@
     {
       "name": "@stackline/color",
       "path": "README.md",
-      "version": "1.0.3",
+      "version": "1.0.4",
       "baselineVersion": "1.0.2",
       "keywords": [
         "stackline",
@@ -27,8 +27,8 @@
       "homepage": "https://alexandro.net/docs/vanilla/color/",
       "baselineTarball": "https://registry.npmjs.org/@stackline/color/-/color-1.0.2.tgz",
       "baselineIntegrity": "sha512-WV1grpHXEkB2fMK+CV8GRG/5FVIFEEYEDZP1yXqcbE9xgbLSjIynIDi0bvUI5B0b2x0DPUbgmk+21RCe9x6UzA==",
-      "expectedSha512": "98937563060c40096511093fbad8b62e2b6c39ae61827dbf5aac8d683a0e4922570ced4ae5d9b4771f326f496c226080d680c79cfdf59f3ab328139b52d08663",
-      "tag": "docs-stackline-color-v1.0.3"
+      "expectedSha512": "3fd5b85833987c12b89773d72400fe0f6893ae81e036e1b0b4bf3b9a3121468f057f1aa569be2f998a8ece8028cb6573458da8d577bd908325fd60828cef2d4f",
+      "tag": "docs-stackline-color-v1.0.4"
     }
   ]
 }
